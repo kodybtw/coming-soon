@@ -71,7 +71,7 @@
       border-radius: 14px;
       margin-bottom: 12px;
       overflow: hidden;
-      transition: 0.3s;
+      transition: 0.2s;
     }
 
     .question {
@@ -88,20 +88,32 @@
 
     .arrow {
       color: #8b5cf6;
-      transition: 0.3s;
+      transition: transform 0.25s ease;
     }
 
+    /* 🔥 SMOOTH ANIMATION FIX */
     .answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-      color: #bbb;
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.25s ease, opacity 0.25s ease;
+      opacity: 0;
       padding: 0 20px;
+    }
+
+    .answer > div {
+      overflow: hidden;
+      color: #bbb;
       line-height: 1.6;
+      padding-bottom: 0;
+      transition: padding 0.25s ease;
     }
 
     .faq-item.active .answer {
-      max-height: 600px;
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+
+    .faq-item.active .answer > div {
       padding-bottom: 18px;
     }
 
@@ -142,123 +154,87 @@
   <p>Everything about Open In 2050</p>
 
   <div class="faq-item">
-    <div class="question">
-      1. What is Open In 2050?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
-      Open In 2050 is a permanent digital grid consisting of exactly 900 slots. Each slot is a personal time capsule that you seal with your content (text, photo, video, audio, or confession). No one — not even you — can open it until January 1, 2050. It’s your digital legacy.
-    </div>
+    <div class="question">1. What is Open In 2050? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
+      Open In 2050 is a permanent digital grid consisting of exactly 900 slots. Each slot is a personal time capsule that you seal with your content (text, photo, video, audio, or confession). No one — not even you — can open it until January 1, 2050.
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      2. When does it launch and how many slots are available?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">2. When does it launch and how many slots are available? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       The project launches on April 27, 2026. There are exactly 900 slots. Once they’re gone, they’re gone forever.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      3. What can I put inside my slot?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">3. What can I put inside my slot? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       Anything: letters, photos, videos, voice messages, ideas, confessions or memories.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      4. Can I edit after sealing?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">4. Can I edit after sealing? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       No. Once sealed, it cannot be edited or viewed until 2050.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      5. Is my content private?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">5. Is my content private? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       Yes, only minimal preview is visible. Full content is hidden until 2050.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      6. What happens in 2050?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">6. What happens in 2050? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       The entire grid opens publicly at the same time.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      7. How much does a slot cost?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">7. How much does a slot cost? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       Price will be announced on launch day.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      8. Can I buy multiple slots?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">8. Can I buy multiple slots? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       Yes, multiple slots are allowed.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      9. Is this permanent?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">9. Is this permanent? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       Yes, we are building long-term storage systems for durability.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      10. Will more slots be added?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">10. Will more slots be added? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       No, only 900 will ever exist.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      11. How will I be notified in 2050?
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">11. How will I be notified in 2050? <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       Via email and possibly a public event.
-    </div>
+    </div></div>
   </div>
 
   <div class="faq-item">
-    <div class="question">
-      12. Contact
-      <span class="arrow">⌄</span>
-    </div>
-    <div class="answer">
+    <div class="question">12. Contact <span class="arrow">⌄</span></div>
+    <div class="answer"><div>
       hello@openin2050.com or X (@dontopen2050)
-    </div>
+    </div></div>
   </div>
 
   <div class="back">
