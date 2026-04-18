@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Open In 2050 — Coming Soon</title>
+  <title>FAQ — Open In 2050</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -16,121 +16,117 @@
     body {
       background: #050505;
       color: white;
+      min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-      overflow: hidden;
+      padding: 60px 20px;
+      overflow-x: hidden;
     }
 
     .glow {
-      position: absolute;
+      position: fixed;
       width: 500px;
       height: 500px;
       background: radial-gradient(circle, rgba(139,92,246,0.4), transparent);
       filter: blur(120px);
-      top: -100px;
-      left: -100px;
+      top: -120px;
+      left: -120px;
+      z-index: 0;
     }
 
     .glow2 {
-      position: absolute;
+      position: fixed;
       width: 400px;
       height: 400px;
       background: radial-gradient(circle, rgba(59,130,246,0.4), transparent);
       filter: blur(120px);
-      bottom: -100px;
-      right: -100px;
+      bottom: -120px;
+      right: -120px;
+      z-index: 0;
     }
 
     .container {
-      position: relative;
+      max-width: 800px;
+      width: 100%;
       z-index: 2;
-      max-width: 600px;
-      padding: 20px;
+      position: relative;
     }
 
     h1 {
-      font-size: 48px;
+      text-align: center;
+      font-size: 42px;
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
 
     p {
+      text-align: center;
       color: #aaa;
-      margin-bottom: 30px;
-      font-size: 18px;
+      margin-bottom: 40px;
     }
 
-    .timer {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .box {
+    .faq-item {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 16px;
-      min-width: 80px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: 0.3s;
     }
 
-    .box span {
-      display: block;
-      font-size: 32px;
-      font-weight: 700;
-    }
-
-    .label {
-      font-size: 12px;
-      color: #777;
-      margin-top: 5px;
-    }
-
-    .pulse {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #888;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 0.3; }
-      50% { opacity: 1; }
-      100% { opacity: 0.3; }
-    }
-
-    .buttons {
-      margin-top: 30px;
+    .question {
+      padding: 18px 20px;
+      cursor: pointer;
       display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      font-weight: 600;
     }
 
-    button {
+    .question:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .arrow {
+      color: #8b5cf6;
+      transition: 0.3s;
+    }
+
+    .answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      color: #bbb;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .answer {
+      max-height: 600px;
+      padding-bottom: 18px;
+    }
+
+    .faq-item.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .back button {
       background: linear-gradient(135deg, #8b5cf6, #3b82f6);
       border: none;
       padding: 12px 24px;
       border-radius: 12px;
       color: white;
-      font-size: 14px;
       cursor: pointer;
       transition: 0.2s;
     }
 
-    button:hover {
+    .back button:hover {
       transform: scale(1.05);
       opacity: 0.9;
-    }
-
-    .footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #666;
     }
   </style>
 </head>
@@ -142,64 +138,141 @@
 
 <div class="container">
 
-  <h1>Open In 2050</h1>
-  <p>The project launches on April 27, 2026</p>
+  <h1>FAQ</h1>
+  <p>Everything about Open In 2050</p>
 
-  <div class="timer">
-    <div class="box"><span id="days">0</span><div class="label">Days</div></div>
-    <div class="box"><span id="hours">0</span><div class="label">Hours</div></div>
-    <div class="box"><span id="minutes">0</span><div class="label">Minutes</div></div>
-    <div class="box"><span id="seconds">0</span><div class="label">Seconds</div></div>
+  <div class="faq-item">
+    <div class="question">
+      1. What is Open In 2050?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      Open In 2050 is a permanent digital grid consisting of exactly 900 slots. Each slot is a personal time capsule that you seal with your content (text, photo, video, audio, or confession). No one — not even you — can open it until January 1, 2050. It’s your digital legacy.
+    </div>
   </div>
 
-  <div class="pulse">⏳ Something big is coming...</div>
-
-  <div class="buttons">
-    <button onclick="sharePage()">🚀 Share</button>
-    <button onclick="window.location.href='/faq'">❓ FAQ</button>
+  <div class="faq-item">
+    <div class="question">
+      2. When does it launch and how many slots are available?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      The project launches on April 27, 2026. There are exactly 900 slots. Once they’re gone, they’re gone forever.
+    </div>
   </div>
 
-  <div class="footer">
-    © 2026 Open In 2050
+  <div class="faq-item">
+    <div class="question">
+      3. What can I put inside my slot?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      Anything: letters, photos, videos, voice messages, ideas, confessions or memories.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">
+      4. Can I edit after sealing?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      No. Once sealed, it cannot be edited or viewed until 2050.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">
+      5. Is my content private?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      Yes, only minimal preview is visible. Full content is hidden until 2050.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">
+      6. What happens in 2050?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      The entire grid opens publicly at the same time.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">
+      7. How much does a slot cost?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      Price will be announced on launch day.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">
+      8. Can I buy multiple slots?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      Yes, multiple slots are allowed.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">
+      9. Is this permanent?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      Yes, we are building long-term storage systems for durability.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">
+      10. Will more slots be added?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      No, only 900 will ever exist.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">
+      11. How will I be notified in 2050?
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      Via email and possibly a public event.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">
+      12. Contact
+      <span class="arrow">⌄</span>
+    </div>
+    <div class="answer">
+      hello@openin2050.com or X (@dontopen2050)
+    </div>
+  </div>
+
+  <div class="back">
+    <button onclick="window.location.href='/'">← Back</button>
   </div>
 
 </div>
 
 <script>
-  const targetDate = new Date("2026-04-27T00:00:00");
-
-  function updateTimer() {
-    const now = new Date();
-    const diff = targetDate - now;
-
-    if (diff <= 0) {
-      document.querySelector(".timer").innerHTML = "🚀 We are live!";
-      return;
-    }
-
-    document.getElementById("days").textContent = Math.floor(diff / (1000*60*60*24));
-    document.getElementById("hours").textContent = Math.floor((diff / (1000*60*60)) % 24);
-    document.getElementById("minutes").textContent = Math.floor((diff / (1000*60)) % 60);
-    document.getElementById("seconds").textContent = Math.floor((diff / 1000) % 60);
-  }
-
-  function sharePage() {
-    const url = window.location.href;
-
-    if (navigator.share) {
-      navigator.share({
-        title: "Open In 2050",
-        text: "I found something that opens in 2050 👀",
-        url
-      });
-    } else {
-      navigator.clipboard.writeText(url);
-      alert("Link copied!");
-    }
-  }
-
-  setInterval(updateTimer, 1000);
-  updateTimer();
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.question').addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
 </script>
 
 </body>
