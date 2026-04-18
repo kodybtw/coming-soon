@@ -1,0 +1,29 @@
+{
+  "name": "coming-soon",
+  "version": "1.0.0",
+  "description": "Open In 2050 - Coming Soon Page",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodybtw/coming-soon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kodybtw/coming-soon/issues"
+  },
+  "homepage": "https://github.com/kodybtw/coming-soon#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.8"
+  }
+}
