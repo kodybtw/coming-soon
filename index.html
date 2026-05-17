@@ -304,7 +304,7 @@
     <div class="buttons">
       <button onclick="sharePage()">🚀 Share</button>
       <button onclick="window.location.href='/faq'">❓ FAQ</button>
-      <button class="secondary" onclick="openReq()">💳 Реквизиты</button>
+      <button onclick="openReq()">💳 Donate</button>
     </div>
 
     <a href="https://x.com/dontopen2050" target="_blank" rel="noopener" class="follow-link">𝕏 Follow @dontopen2050</a>
@@ -314,34 +314,34 @@
     </div>
   </div>
 
-  <!-- Modal: Реквизиты -->
+  <!-- Modal: Donate -->
   <div class="modal-backdrop" id="reqModal" onclick="if(event.target===this) closeReq()">
     <div class="modal">
       <button class="modal-close" onclick="closeReq()" aria-label="Close">×</button>
-      <h2>Реквизиты для поддержки</h2>
+      <h2>Support the project</h2>
 
       <div class="req-item">
         <div>
-          <div class="req-label">USDT (TRC-20)</div>
-          <div class="req-value" id="req-usdt">TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
+          <div class="req-label">Ethereum (ETH)</div>
+          <div class="req-value" id="req-eth">0x0297DA0a8bb322927Ef5431E36dF2c51888C9B8D</div>
         </div>
-        <button class="req-copy" onclick="copyReq('req-usdt', this)">Copy</button>
+        <button class="req-copy" onclick="copyReq('req-eth', this)">Copy</button>
       </div>
 
       <div class="req-item">
         <div>
-          <div class="req-label">BTC</div>
-          <div class="req-value" id="req-btc">bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+          <div class="req-label">Bitcoin (BTC)</div>
+          <div class="req-value" id="req-btc">bc1qlpt786s7wepnlagccf396za5vh9a2kw4s230k5</div>
         </div>
         <button class="req-copy" onclick="copyReq('req-btc', this)">Copy</button>
       </div>
 
       <div class="req-item">
         <div>
-          <div class="req-label">Карта</div>
-          <div class="req-value" id="req-card">0000 0000 0000 0000</div>
+          <div class="req-label">Solana (SOL)</div>
+          <div class="req-value" id="req-sol">AsccbfnSHDufjWWLDzbgDVBhq6wYYTPhacGqTuhacWbY</div>
         </div>
-        <button class="req-copy" onclick="copyReq('req-card', this)">Copy</button>
+        <button class="req-copy" onclick="copyReq('req-sol', this)">Copy</button>
       </div>
     </div>
   </div>
@@ -391,7 +391,7 @@
       setTimeout(() => { btn.textContent = old; }, 1500);
     }
 
-    // ESC закрывает модалку
+    // ESC closes the modal
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeReq();
     });
